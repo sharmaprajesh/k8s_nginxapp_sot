@@ -1,29 +1,29 @@
-name: ENV Variables
+name: ENC ENV Variables
 on: push
 env:
-  WF_ENV: ${{ secrets.WF_ENV }}
+  WF_ENV2: ${{ secrets.WF_ENV }}
 
 jobs:
-  log-env:
+  enc-log-env:
     env:
-      JOB_ENV: Only avaliable to log-env-jobs
+      JOB_ENV2: Only avaliable to log-env-jobs
     runs-on: ubuntu-latest
     steps:
-    - name: Log Env Variables
+    - name: Enc  Log Env Variables
       env:
-        STP_ENV: Only avaliable to Log Env Variables steps
+        STP_ENV2: Only avaliable to Log Env Variables steps
       run: |
-        echo "WF_ENV: ${WF_ENV}" 
-        echo "JOB_ENV: ${JOB_ENV}" 
-        echo "STP_ENV: ${STP_ENV}" 
+        echo "WF_ENV2: ${WF_ENV2}" 
+        echo "JOB_ENV2: ${JOB_ENV2}" 
+        echo "STP_ENV2: ${STP_ENV2}" 
         
-    - name: Log Env Variables 2      
+    - name: Enc Log Env Variables 2      
       run: |
-        echo "WF_ENV: ${WF_ENV}" 
-        echo "JOB_ENV: ${JOB_ENV}" 
-        echo "STP_ENV: ${STP_ENV}" 
+        echo "WF_ENV2: ${WF_ENV2}" 
+        echo "JOB_ENV2: ${JOB_ENV2}" 
+        echo "STP_ENV2: ${STP_ENV2}" 
   
-  log-default-env:
+  enc-log-default-env:
     runs-on: ubuntu-latest
     steps:
     - name: Default env variables
@@ -36,9 +36,9 @@ jobs:
         echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
         echo "GITHUB_SHA: ${GITHUB_SHA}"
         echo "GITHUB_REF: ${GITHUB_REF}"
-        echo "WF_ENV: ${WF_ENV}" 
-        echo "JOB_ENV: ${JOB_ENV}" 
-        echo "STP_ENV: ${STP_ENV}" 
+        echo "WF_ENV2: ${WF_ENV2}" 
+        echo "JOB_ENV2: ${JOB_ENV2}" 
+        echo "STP_ENV2: ${STP_ENV2}" 
 
         
 
